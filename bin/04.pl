@@ -23,6 +23,7 @@ run(6) - печатает "1\n"
 
 =cut
 # run(2147483648);
+
 sub run {
     my $x = shift;
     my $flag = 1;
@@ -30,10 +31,11 @@ sub run {
     my $coun = 32;
     while ($flag == 1) {
     	$coun--;
-    	$flag = 0 if (($num & $x)>0 || $num < 1);
-    	$num >>=1;
+    	$flag = 0 if (($num & $x) > 0 || $num < 1);
+    	$num >>= 1;
     }
-	print $coun,"\n";
+    
+	print $coun, "\n";
 }
 
 1;

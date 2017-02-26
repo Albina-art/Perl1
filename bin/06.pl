@@ -20,10 +20,9 @@ sub encode {
     my @mas_str = split //, $str;
     while (@mas_str) {
         my $letter = shift @mas_str;
-        my $number = ord($letter) + $key % 127 ;
-        if (($number  > 122) || (90 < $number && $number < 97)) {
-            $number -= 127;
-        }
+        my $number = ord($letter) + $key % 127;
+        $number -= 127
+        if ( $number  > 122 ) || ( 90 < $number && $number < 97 );
         $encoded_str .= chr($number);
     }
 
@@ -42,13 +41,12 @@ sub decode {
     # Алгоритм дешифрования
     my ($encoded_str, $key) = @_;
     my $str = '';
-    my @mas_encod = split //, $encoded_str ;
+    my @mas_encod = split //, $encoded_str;
     while (@mas_encod) {
         my $letter = shift @mas_encod;
-        my $number = ord ($letter)- $key % 127 ;
-        if (($number  > 122) || (90 < $number && $number < 97)) {
-            $number += 127;
-        }
+        my $number = ord ($letter) - $key % 127;
+        $number += 127
+        if ( $number  > 122 ) || ( 90 < $number && $number < 97 );
         $str .= chr($number);
     }
 

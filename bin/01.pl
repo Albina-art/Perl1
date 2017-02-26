@@ -30,13 +30,13 @@ sub run {
 
     my $x1 = undef;
     my $x2 = undef;
-    my $disk = $b_value**2 - 4*$a_value*$c_value;
-    if ($disk > 0 && $a_value != 0) {
-    	$x1 = (- $b_value + sqrt $disk)/($a_value*2);
-    	$x2 = (- $b_value - sqrt $disk)/($a_value*2);
+    my $disk = $b_value**2 - 4 * $a_value * $c_value;
+    if ( $disk > 0 && $a_value != 0) {
+    	$x1 = ( - $b_value + sqrt $disk ) / ( 2 * $a_value );
+    	$x2 = ( - $b_value - sqrt $disk ) / ( 2 * $a_value );
     }
     elsif ( $disk == 0) {
-    	$x2 = $x1 = - $b_value/($a_value*2);
+    	$x2 = $x1 = - $b_value / ( $a_value * 2 );
     }
     else {
     	print "No solution!\n";
