@@ -27,7 +27,7 @@ sub run {
     my $min = undef;
     my $max = undef;
     if ($x > $y) {
-    	if ($x > $z){
+    	if ($x > $z) {
     		$max = $x;
     		$min = $y < $z ? $y : $z;
     	}
@@ -37,7 +37,7 @@ sub run {
     	}
     }
     else {
-      	if ($y < $z){
+      	if ($y < $z) {
     		$max = $z;
     		$min = $x;
     	}
